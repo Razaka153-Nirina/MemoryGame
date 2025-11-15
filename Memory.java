@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 
-public class MemoryGame extends JFrame {
+public class Memory extends JFrame {
 
     public static void main(String[] args) {
 
@@ -28,7 +28,7 @@ public class MemoryGame extends JFrame {
     private Image im1,im2,im3,im4,im5,im6,im7,im8,im9,im10;
     private int i;
     private FrameDessin panneau;
-    public MemoryGame()
+    public Memory()
     {
         i=0;
         panneau = new FrameDessin("Memory");
@@ -71,8 +71,8 @@ class FrameDessin extends JFrame implements MouseListener {
     private final boolean[] trouve = { false, false, false, false, false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false };
 
-    private int numclic = 0, nbpairs = 0;
-    private int  clic1, clic2;
+    private int numclic = 0, nbpairs = 0, nbcoups=0;
+    private int  clic1, clic2, clic3;
     public FrameDessin(String titre) {
         super(titre);
         
@@ -106,57 +106,33 @@ class FrameDessin extends JFrame implements MouseListener {
         int ye = e.getY() / 120;
         int position = ye*5+xe;
         
-        // Vérifier si la carte est déjà trouvée ou révélée
-        if (trouve[position] || revealed[position]) {
-            return;
-        }
-        
-        // Premier clic - révéler la première carte
-        if (clic1 == 0) {
-            clic1 = position;
-            revealed[clic1] = true;
-        } 
-        // Deuxième clic - révéler la deuxième carte et vérifier la paire
-        else if (clic2 == 0 && position != clic1) {
-            clic2 = position;
-            revealed[clic2] = true;
-            
-            // Incrémenter le nombre de coups (à chaque paire tentée)
-            numclic++;
-            llnbc.setText(String.valueOf(numclic));
-            
-            // Vérifier si les deux cartes sont identiques
-            if (order[clic1] == order[clic2]) {
-                // Paire trouvée
-                trouve[clic1] = true;
-                trouve[clic2] = true;
-                revealed[clic1] = true; // <-- assure que les deux restent révélées
-                revealed[clic2] = true;
-                nbpairs++; // Incrémenter le nombre de paires trouvées
-                llnbp.setText(String.valueOf(nbpairs));
-                
-                // Réinitialiser pour le prochain tour
-                clic1 = 0;
-                clic2 = 0;
-            } else {
-                // Cartes différentes - retourner après un délai
-                Timer timer = new Timer(1000, new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent evt) {
-                        revealed[clic1] = false;
-                        revealed[clic2] = false;
-                        clic1 = 0;
-                        clic2 = 0;
-                        draw.repaint();
-                    }
-                });
-                timer.setRepeats(false);
-                timer.start();
-            }
-        }
-        
-        draw.repaint(); // Redessiner l'interface après chaque action
+        /*TODO*/
+    //    if (!trouve[position] && !revealed[position]) { 
+    //         revealed[position] = true; // la carte est revelee
+    //         // draw.repaint(); // Redessiner l'interface
+    //         System.out.println("test");
+    //    } else 
+    if (trouve[position] || revealed[position]) {
+        return; // Ne rien faire si la carte est déjà trouvée ou révélée
     }
+        if (order[clic1] == order[clic1])
+         {
+            trouve[clic1] = true;
+            clic1 = 0;
+        }
+         else{
+            revealed[clic1] = false;
+            clic1 = 0;
+            draw.repaint();
+        }
+    
+        draw.repaint();
+    
+    }
+
+       
+        
+    
 
     @Override
     public void mousePressed(MouseEvent e) {
