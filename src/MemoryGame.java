@@ -34,16 +34,16 @@ public class MemoryGame extends JFrame {
         panneau = new FrameDessin("Memory");
         panneau.addMouseListener(panneau);
         try{
-            im1 = ImageIO.read(new File("im1.png"));
-            im2 = ImageIO.read(new File("im2.png"));
-            im3 = ImageIO.read(new File("im3.png"));
-            im4 = ImageIO.read(new File("im4.png"));
-            im5 = ImageIO.read(new File("im5.png"));
-            im6 = ImageIO.read(new File("im6.png"));
-            im7 = ImageIO.read(new File("im7.png"));
-            im8 = ImageIO.read(new File("im8.png"));
-            im9 = ImageIO.read(new File("im9.png"));
-            im10 = ImageIO.read(new File("im10.png"));
+            im1 = ImageIO.read(new File("images/im1.png"));
+            im2 = ImageIO.read(new File("images/im2.png"));
+            im3 = ImageIO.read(new File("images/im3.png"));
+            im4 = ImageIO.read(new File("images/im4.png"));
+            im5 = ImageIO.read(new File("images/im5.png"));
+            im6 = ImageIO.read(new File("images/im6.png"));
+            im7 = ImageIO.read(new File("images/im7.png"));
+            im8 = ImageIO.read(new File("images/im8.png"));
+            im9 = ImageIO.read(new File("images/im9.png"));
+            im10 = ImageIO.read(new File("images/im10.png"));
         } catch (IOException ex) {
         }
     }
@@ -66,13 +66,13 @@ class FrameDessin extends JFrame implements MouseListener {
     private JLabel llnbc,llnbp;
     
     private Image[] images = new Image[10]; 
-    private Image backimage = new ImageIcon("fond.png").getImage(); 
+    private Image backimage = new ImageIcon("images/fond.png").getImage(); 
     private int[] order = { 10, 9, 1, 2, 4, 2, 7, 6, 5, 10, 3, 3, 8, 9, 1, 8, 6, 5, 4, 7 };
     private final boolean[] trouve = { false, false, false, false, false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false };
 
     private int numclic = 0, nbpairs = 0;
-    private int  clic1, clic2;
+    private int clic1 = -1, clic2 = -1;
     public FrameDessin(String titre) {
         super(titre);
         
