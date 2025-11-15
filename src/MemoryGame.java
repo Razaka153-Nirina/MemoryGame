@@ -57,6 +57,7 @@ class FrameDessin extends JFrame implements MouseListener {
     Border raisedbevel = BorderFactory.createRaisedBevelBorder();
     Border loweredbevel = BorderFactory.createLoweredBevelBorder();
     private Image im;
+    private JButton btnNouveau; 
 
     private boolean[] revealed = new boolean[20]; // Suivi des cartes retournées
 
