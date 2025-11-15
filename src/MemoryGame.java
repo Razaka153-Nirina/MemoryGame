@@ -117,7 +117,7 @@ class FrameDessin extends JFrame implements MouseListener {
             revealed[clic1] = true;
         }
         // Deuxième clic - révéler la deuxième carte et vérifier la paire
-        else if (clic2 == 0 && position != clic1) {
+        else if (clic2 == -1 && position != clic1) { // au lieu de == 0
             clic2 = position;
             revealed[clic2] = true;
 
