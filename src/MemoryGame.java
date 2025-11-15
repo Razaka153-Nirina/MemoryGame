@@ -136,8 +136,8 @@ class FrameDessin extends JFrame implements MouseListener {
                 llnbp.setText(String.valueOf(nbpairs));
 
                 // Réinitialiser pour le prochain tour
-                clic1 = -1; 
-                clic2 = -1; 
+                clic1 = -1;
+                clic2 = -1;
             } else {
                 // Cartes différentes - retourner après un délai
                 Timer timer = new Timer(1000, new ActionListener() {
@@ -145,8 +145,8 @@ class FrameDessin extends JFrame implements MouseListener {
                     public void actionPerformed(ActionEvent evt) {
                         revealed[clic1] = false;
                         revealed[clic2] = false;
-                        clic1 = 0;
-                        clic2 = 0;
+                        clic1 = -1; // au lieu de = 0
+                        clic2 = -1; // au lieu de = 0
                         draw.repaint();
                     }
                 });
