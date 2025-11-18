@@ -15,7 +15,7 @@ public class EndGameDialog extends JDialog {
         mainPanel.setBackground(new Color(245, 245, 245));
         
         // Titre
-        JLabel titleLabel = new JLabel("🏆 PARTIE TERMINÉE ! 🏆");
+        JLabel titleLabel = new JLabel("PARTIE TERMINÉE ! ");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         titleLabel.setForeground(new Color(255, 152, 0));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
