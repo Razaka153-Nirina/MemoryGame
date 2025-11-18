@@ -15,7 +15,7 @@ public class WelcomeDialog extends JDialog {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
         // Titre
-        JLabel titleLabel = new JLabel("🎮 MEMORY GAME 🎮");
+        JLabel titleLabel = new JLabel(" MEMORY GAME ");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setForeground(new Color(0, 102, 204));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
