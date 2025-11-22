@@ -6,15 +6,6 @@ This is a **Memory Game** made with Java Swing. This was one of my **first proje
 
 I learned how to use JavaSwing to create windows, buttons, and interactive games. This project helped me understand how to work with GUI (Graphical User Interface) in Java.
 
-e52652u@sd-lx012-16:~/Documents$ git clone https://github.com/schmit721u/assovote_RAZAKANIRINA_SCHMITT.git
-Clonage dans 'assovote_RAZAKANIRINA_SCHMITT'...
-Username for 'https://github.com': Razaka153-Nirina
-Password for 'https://Razaka153-Nirina@github.com': 
-remote: Invalid username or token. Password authentication is not supported for Git operations.
-fatal: Échec d'authentification pour 'https://github.com/schmit721u/assovote_RAZAKANIRINA_SCHMITT.git/'
-e52652u@sd-lx012-16:~/Documents$ 
-e52652u@sd-lx012-16:~/Documents$ git clone https://github.com/schmit721u/assovote_RAZAKANIRINA_SCHMITT.git^C
-e52652u@sd-lx012-16:~/Documents$ 
 
 ## What is Memory Game?
 
